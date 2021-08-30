@@ -1,0 +1,43 @@
+DROP TABLE IF EXISTS `db_vacina`;
+
+CREATE TABLE campanha (
+  id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  titulo VARCHAR(255) NOT NULL,
+  descricao TEXT(500) NOT NULL,
+  dataIni DATE NOT NULL,
+  dataFim DATE
+);
+
+CREATE TABLE publico_alvo (
+  id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  titulo VARCHAR(255) NOT NULL,
+  descricao TEXT(1000) NOT NULL,
+  status TINYINT(1) NOT NULL,
+  campanha_id INTEGER NOT NULL
+);
+  
+ALTER TABLE `publico_alvo` ADD CONSTRAINT `fk_campanha` FOREIGN KEY (`campanha_id`) REFERENCES `campanha` (`id`) ;
+
+CREATE TABLE `usuario` (
+  id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  senha VARCHAR(255) NOT NULL,
+  status TINYINT(1) NOT NULL
+);
+
+CREATE TABLE `papel` (
+  id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100) NOT NULL,
+  descricao VARCHAR(500) NOT NULL,
+  status TINYINT(1) NOT NULL
+);
+
+CREATE TABLE `usuario_papel` (
+  id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  usuario_id INTEGER NOT NULL,
+  papel_id INTEGER NOT NULL
+);
+
+ALTER TABLE `usuario_papel` ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
+ALTER TABLE `usuario_papel` ADD CONSTRAINT `fk_papel` FOREIGN KEY (`papel_id`) REFERENCES `papel` (`id`);

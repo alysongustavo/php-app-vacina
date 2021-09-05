@@ -3,7 +3,7 @@ services:
   app:
     build:
       args:
-        user: sammy
+        user: alyson
         uid: 1000
       context: ./
       dockerfile: Dockerfile
@@ -45,4 +45,4 @@ services:
 
 networks:
   travellist:
-    driver: bridge
+    driver: host

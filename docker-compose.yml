@@ -14,7 +14,7 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - travellist
+      - vacina
   db:
     image: mysql:5.7
     container_name: travellist-db
@@ -29,7 +29,7 @@ services:
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - travellist
+      - vacina
   nginx:
     image: nginx:1.17-alpine
     container_name: travellist-nginx
@@ -40,7 +40,7 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d
     networks:
-      - travellist
+      - vacina
 
 
 networks:

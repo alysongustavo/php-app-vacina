@@ -44,5 +44,5 @@ services:
 
 
 networks:
-  travellist:
+  vacina:
     driver: host

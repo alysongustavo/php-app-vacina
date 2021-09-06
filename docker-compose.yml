@@ -23,7 +23,7 @@ services:
       MYSQL_DATABASE: db_vacina
       MYSQL_ROOT_PASSWORD: computacao2014
       MYSQL_PASSWORD: computacao2014
-      MYSQL_USER: root
+      MYSQL_USER: alyson
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:

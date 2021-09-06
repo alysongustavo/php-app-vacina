@@ -9,7 +9,7 @@ return [
     'doctrine' => [
         'connection' => [
             'orm_default' => [
-                'params' => ['url' => 'mysql://root:computacao2014@localhost/db_vacina'],
+                'params' => ['url' => 'mysql://alyson:computacao2014@172.19.0.3/db_vacina'],
             ],
         ],
         'driver' => [

@@ -9,7 +9,7 @@ return [
     'doctrine' => [
         'connection' => [
             'orm_default' => [
-                'params' => ['url' => 'mysql://root:computacao2014@localhost/db_vacina'],
+                'params' => ['url' => 'mysql://root:computacao2014@db/db_vacina'],
             ],
         ],
         'driver' => [

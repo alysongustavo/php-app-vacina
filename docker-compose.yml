@@ -45,4 +45,4 @@ services:
 
 networks:
   vacina:
-    driver: host
+    driver: bridge
